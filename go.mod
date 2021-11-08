@@ -2,7 +2,7 @@ module goal-example
 
 go 1.17
 
-require github.com/qbhy/goal v0.0.0-20211106083409-674c19cb5352
+require github.com/qbhy/goal v0.0.0-20211108075345-2276083e01b2
 
 require (
 	github.com/apex/log v1.9.0 // indirect

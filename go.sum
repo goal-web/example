@@ -76,6 +76,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/qbhy/goal v0.0.0-20211106083409-674c19cb5352 h1:A5rZ4Ss5t+kuZ1Am37EsO21EZiuZQ2H4Ihj8bY75e+o=
 github.com/qbhy/goal v0.0.0-20211106083409-674c19cb5352/go.mod h1:lXAyYG7xfTJ2HMK0bQ9ACqNIdJ6jLvG3+bsqHt2eTdY=
+github.com/qbhy/goal v0.0.0-20211108075345-2276083e01b2 h1:P4GlJIcid/D0LJUjur09Plc1Q5YXbvJGC5tFxZlDcN8=
+github.com/qbhy/goal v0.0.0-20211108075345-2276083e01b2/go.mod h1:lXAyYG7xfTJ2HMK0bQ9ACqNIdJ6jLvG3+bsqHt2eTdY=
 github.com/qbhy/parallel v1.2.0/go.mod h1:gjKS0IACnz3SWXkeEOUvPPZZxpeQAOW47jT4cpWPvqU=
 github.com/rogpeppe/fastuuid v1.1.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/sergi/go-diff v1.0.0/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
