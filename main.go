@@ -14,13 +14,13 @@ import (
 	config2 "github.com/goal-web/example/config"
 	"github.com/goal-web/example/routes"
 	"github.com/goal-web/filesystem"
+	"github.com/goal-web/goal/auth"
+	"github.com/goal-web/goal/database"
+	"github.com/goal-web/goal/http"
+	"github.com/goal-web/goal/session"
+	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/redis"
-	"github.com/qbhy/goal/auth"
-	"github.com/qbhy/goal/database"
-	"github.com/qbhy/goal/http"
-	"github.com/qbhy/goal/session"
-	"github.com/qbhy/goal/signal"
 	"os"
 )
 

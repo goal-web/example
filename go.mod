@@ -11,11 +11,11 @@ require (
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
+	github.com/goal-web/goal v0.0.2
 	github.com/goal-web/hashing v0.1.0
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
 	github.com/goal-web/supports v0.1.10
 	github.com/golang-module/carbon/v2 v2.0.1
-	github.com/qbhy/goal v0.0.0-20220122110915-07faa8d40eb5
 )
 
 require (
@@ -24,8 +24,9 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/goal-web/collection v0.1.3 // indirect
 	github.com/goal-web/container v0.1.3 // indirect
-	github.com/goal-web/querybuilder v0.1.7 // indirect
+	github.com/goal-web/querybuilder v0.1.9 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75 // indirect
 	github.com/jmoiron/sqlx v1.3.4 // indirect
@@ -39,6 +40,7 @@ require (
 	github.com/modood/table v0.0.0-20200225102042-88de94bb9876 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/qbhy/parallel v1.3.0 // indirect
+	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
 	golang.org/x/crypto v0.0.0-20220112180741-5e0467b6c7ce // indirect

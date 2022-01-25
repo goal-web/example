@@ -2,8 +2,8 @@ package routes
 
 import (
 	"github.com/goal-web/contracts"
-	"github.com/qbhy/goal/examples/helloworld/app/controllers"
-	"github.com/qbhy/goal/session"
+	"github.com/goal-web/example/app/controllers"
+	"github.com/goal-web/goal/session"
 )
 
 func ApiRoutes(router contracts.Router) {

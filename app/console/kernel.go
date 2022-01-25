@@ -4,8 +4,8 @@ import (
 	"github.com/goal-web/console"
 	"github.com/goal-web/console/commands"
 	"github.com/goal-web/contracts"
+	commands2 "github.com/goal-web/example/app/console/commands"
 	"github.com/goal-web/supports/logs"
-	commands2 "github.com/qbhy/goal/examples/helloworld/app/console/commands"
 	"time"
 )
 

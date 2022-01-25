@@ -3,8 +3,8 @@ package providers
 import (
 	"github.com/goal-web/application"
 	"github.com/goal-web/contracts"
+	"github.com/goal-web/example/app/listeners"
 	"github.com/golang-module/carbon/v2"
-	"github.com/qbhy/goal/examples/helloworld/app/listeners"
 )
 
 type AppServiceProvider struct {
