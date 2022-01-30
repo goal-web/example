@@ -2,8 +2,8 @@ package listeners
 
 import (
 	"github.com/goal-web/contracts"
+	"github.com/goal-web/database/events"
 	"github.com/goal-web/supports/logs"
-	"github.com/goal-web/goal/database/events"
 )
 
 type DebugQuery struct {
