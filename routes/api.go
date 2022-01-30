@@ -4,7 +4,7 @@ import (
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/example/app/http/controllers"
 	"github.com/goal-web/example/app/http/middlewares"
-	"github.com/goal-web/goal/session"
+	"github.com/goal-web/session"
 )
 
 func ApiRoutes(router contracts.Router) {

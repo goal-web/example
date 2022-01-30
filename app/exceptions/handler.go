@@ -2,7 +2,7 @@ package exceptions
 
 import (
 	"github.com/goal-web/contracts"
-	"github.com/goal-web/goal/http"
+	"github.com/goal-web/http"
 	"github.com/goal-web/supports/logs"
 	"github.com/goal-web/supports/utils"
 	"reflect"
