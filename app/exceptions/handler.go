@@ -7,6 +7,7 @@ import (
 	"github.com/goal-web/supports/utils"
 	"reflect"
 	"runtime/debug"
+	"strings"
 )
 
 type ExceptionHandler struct {
@@ -18,9 +19,12 @@ func NewHandler() contracts.ExceptionHandler {
 }
 
 func (handler *ExceptionHandler) Handle(exception contracts.Exception) interface{} {
+	logs.WithException(exception).Warn("报错了")
 	switch e := exception.(type) {
 	case http.Exception: // http 支持在异常处理器返回响应
-		logs.WithError(e).Debug("http 请求报错了")
+		if !strings.Contains(e.Error(), "404") {
+			debug.PrintStack()
+		}
 		return contracts.Fields{
 			"path":  e.Request.Path(),
 			"error": e.Error(),

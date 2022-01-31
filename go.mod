@@ -15,9 +15,11 @@ require (
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/goal v0.1.0
 	github.com/goal-web/hashing v0.1.0
+	github.com/goal-web/http v0.1.0
 	github.com/goal-web/pipeline v0.1.5
 	github.com/goal-web/querybuilder v0.1.12
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
+	github.com/goal-web/session v0.1.0
 	github.com/goal-web/supports v0.1.12
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
@@ -35,8 +37,6 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goal-web/collection v0.1.4 // indirect
-	github.com/goal-web/http v0.1.0 // indirect
-	github.com/goal-web/session v0.1.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
 	github.com/jmoiron/sqlx v1.3.4 // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
@@ -63,6 +63,7 @@ replace (
 	github.com/goal-web/container => ../container
 	github.com/goal-web/contracts => ../contracts
 	github.com/goal-web/database => ../database
+	github.com/goal-web/encryption => ../encryption
 	github.com/goal-web/goal => ../goal
 	github.com/goal-web/http => ../http
 	github.com/goal-web/session => ../session

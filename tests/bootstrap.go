@@ -12,10 +12,10 @@ import (
 	"github.com/goal-web/filesystem"
 	"github.com/goal-web/goal/auth"
 	"github.com/goal-web/goal/exceptions"
-	"github.com/goal-web/goal/session"
 	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/redis"
+	"github.com/goal-web/session"
 	"github.com/goal-web/supports/logs"
 )
 

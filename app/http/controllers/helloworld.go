@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"errors"
 	"fmt"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database/table"
@@ -18,7 +17,6 @@ func Counter(session contracts.Session) string {
 	count := utils.ConvertToInt(session.Get("count", "0"), 0)
 	count++
 	session.Put("count", strconv.Itoa(count))
-	panic(errors.New("报错"))
 	return "hello, goal." + strconv.Itoa(count)
 }
 
