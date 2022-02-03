@@ -5,13 +5,19 @@ import (
 	"github.com/goal-web/supports/class"
 )
 
-var UserClass = class.Make(new(User))
+var (
+	UserModel = table.NewModel(class.Make(new(User)), "users")
+)
 
-func UserModel() *table.Table {
-	return table.Model(UserClass, "users")
+func UserQuery() *table.Table {
+	return table.FromModel(UserModel)
 }
 
 type User struct {
-	Id       int64  `json:"id"`
+	Id       string `json:"id"`
 	NickName string `json:"name"`
+}
+
+func (u User) GetId() string {
+	return u.Id
 }

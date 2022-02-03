@@ -4,23 +4,25 @@ go 1.17
 
 require (
 	github.com/goal-web/application v0.1.0
+	github.com/goal-web/auth v0.1.1
 	github.com/goal-web/cache v0.0.0-20220120131444-19db721c20bf
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.4
-	github.com/goal-web/contracts v0.1.25
-	github.com/goal-web/database v0.1.1
+	github.com/goal-web/contracts v0.1.29
+	github.com/goal-web/database v0.1.3
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/goal v0.1.0
 	github.com/goal-web/hashing v0.1.0
-	github.com/goal-web/http v0.1.0
+	github.com/goal-web/http v0.1.2
 	github.com/goal-web/pipeline v0.1.5
 	github.com/goal-web/querybuilder v0.1.12
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
-	github.com/goal-web/session v0.1.0
+	github.com/goal-web/session v0.1.3
 	github.com/goal-web/supports v0.1.12
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
 	github.com/labstack/echo/v4 v4.6.3
@@ -60,6 +62,7 @@ require (
 
 replace (
 	github.com/goal-web/application => ../application
+	github.com/goal-web/auth => ../auth
 	github.com/goal-web/container => ../container
 	github.com/goal-web/contracts => ../contracts
 	github.com/goal-web/database => ../database

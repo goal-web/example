@@ -42,11 +42,11 @@ func RedisExample(redis contracts.RedisConnection) contracts.Fields {
 }
 
 func GetUsers() interface{} {
-	models.UserModel().Create(map[string]interface{}{
+	models.UserQuery().Create(map[string]interface{}{
 		"name": utils.RandStr(10),
 	})
 	return contracts.Fields{
-		"models": models.UserModel().Get().ToArrayFields(),
+		"models": models.UserQuery().Get().ToArrayFields(),
 		"tables": table.Query("users").Get().ToArrayFields(),
 	}
 }

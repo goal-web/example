@@ -2,6 +2,7 @@ package tests
 
 import (
 	"github.com/goal-web/application"
+	"github.com/goal-web/auth"
 	"github.com/goal-web/cache"
 	"github.com/goal-web/config"
 	"github.com/goal-web/contracts"
@@ -10,7 +11,6 @@ import (
 	"github.com/goal-web/events"
 	config2 "github.com/goal-web/example/config"
 	"github.com/goal-web/filesystem"
-	"github.com/goal-web/goal/auth"
 	"github.com/goal-web/goal/exceptions"
 	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"

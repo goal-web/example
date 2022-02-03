@@ -1,8 +1,10 @@
 package config
 
 import (
+	"github.com/goal-web/auth"
 	"github.com/goal-web/contracts"
-	"github.com/goal-web/goal/auth"
+	"github.com/goal-web/example/models"
+	"github.com/golang-jwt/jwt"
 )
 
 func init() {
@@ -12,11 +14,29 @@ func init() {
 				Guard string
 				User  string
 			}{
-				Guard: env.GetString("auth.default"),
-				User:  env.GetString("auth.user"),
+				Guard: env.StringOption("auth.default", "jwt"),
+				User:  env.StringOption("auth.user", "db"),
 			},
-			Guards: nil,
-			Users:  nil,
+			Guards: map[string]contracts.Fields{
+				"jwt": {
+					"driver":   "jwt",
+					"secret":   env.GetString("auth.jwt.secret"),
+					"method":   jwt.SigningMethodHS256,
+					"lifetime": 60 * 60 * 24, // 单位：秒
+					"provider": "db",
+				},
+				"session": {
+					"driver":      "session",
+					"provider":    "db",
+					"session_key": env.StringOption("auth.session.key", "auth_session"),
+				},
+			},
+			Users: map[string]contracts.Fields{
+				"db": {
+					"driver": "db",
+					"model":  models.UserModel,
+				},
+			},
 		}
 	}
 }

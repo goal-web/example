@@ -82,9 +82,9 @@ func TestModel(t *testing.T) {
 		}).ToJson()) // query 返回 Collection<contracts.Fields>
 
 	fmt.Println(models.UserModel(). // model 返回 Collection<models.User>
-		Get().
-		Map(func(user models.User) {
-			fmt.Println("id:", user.Id)
+					Get().
+					Map(func(user models.User) {
+			fmt.Println("id:", user.GetId)
 		}).ToJson())
 
 	fmt.Println(models.UserModel().Where("id", ">", 0).Delete())
