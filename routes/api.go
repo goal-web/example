@@ -12,6 +12,8 @@ func ApiRoutes(router contracts.Router) {
 
 	v1 := router.Group("", session.StartSession)
 
+	v1.Get("/queue", controllers.DemoJob)
+
 	v1.Get("/", controllers.HelloWorld)
 	v1.Get("/counter", controllers.Counter, middlewares.Example)
 	v1.Get("/db", controllers.DatabaseQuery)

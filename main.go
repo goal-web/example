@@ -19,7 +19,9 @@ import (
 	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/http"
+	"github.com/goal-web/queue"
 	"github.com/goal-web/redis"
+	"github.com/goal-web/serialization"
 	"github.com/goal-web/session"
 	"os"
 )
@@ -51,6 +53,12 @@ func main() {
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
 		&database.ServiceProvider{},
+		&console.ServiceProvider{
+			ConsoleProvider: console2.NewKernel,
+		},
+		&serialization.ServiceProvider{},
+		&queue.ServiceProvider{},
+		providers.AppServiceProvider{},
 		&http.ServiceProvider{RouteCollectors: []interface{}{
 			func(router contracts.Router) {
 				router.Static("/", "public")
@@ -58,10 +66,6 @@ func main() {
 			// 路由收集器
 			routes.ApiRoutes,
 		}},
-		&console.ServiceProvider{
-			ConsoleProvider: console2.NewKernel,
-		},
-		providers.AppServiceProvider{},
 	)
 
 	app.Call(func(console3 contracts.Console, input contracts.ConsoleInput) {

@@ -3,6 +3,7 @@ package providers
 import (
 	"github.com/goal-web/application"
 	"github.com/goal-web/contracts"
+	"github.com/goal-web/example/app/jobs"
 	"github.com/goal-web/example/app/listeners"
 	"github.com/golang-module/carbon/v2"
 )
@@ -17,6 +18,10 @@ func (this AppServiceProvider) Register(app contracts.Application) {
 		carbon.SetTimezone(appConfig.Timezone)
 
 		dispatcher.Register("QUERY_EXECUTED", listeners.DebugQuery{})
+	})
+
+	app.Call(func(serializer contracts.ClassSerializer) {
+		serializer.Register(jobs.DemoClass)
 	})
 }
 

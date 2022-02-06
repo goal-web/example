@@ -1,0 +1,20 @@
+package tests
+
+import (
+	"fmt"
+	"net/http"
+	"sync"
+	"testing"
+)
+
+func TestBenchKafka(t *testing.T) {
+	wg := sync.WaitGroup{}
+	for i := 0; i < 100000; i++ {
+		wg.Add(1)
+		go func(int2 int) {
+			http.Get(fmt.Sprintf("http://localhost:8008/queue?info=bench-%d", int2))
+			wg.Done()
+		}(i)
+	}
+	wg.Wait()
+}
