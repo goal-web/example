@@ -70,7 +70,7 @@ func TestModel(t *testing.T) {
 			fmt.Println("用table查询", user)
 		}).ToJson()) // query 返回 Collection<contracts.Fields>
 
-	user := models.UserModel().Create(contracts.Fields{
+	user := models.UserQuery().Create(contracts.Fields{
 		"name": "qbhy",
 	}).(models.User)
 
@@ -81,11 +81,11 @@ func TestModel(t *testing.T) {
 			fmt.Println("用table查询", user)
 		}).ToJson()) // query 返回 Collection<contracts.Fields>
 
-	fmt.Println(models.UserModel(). // model 返回 Collection<models.User>
+	fmt.Println(models.UserQuery(). // model 返回 Collection<models.User>
 					Get().
 					Map(func(user models.User) {
-			fmt.Println("id:", user.GetId)
+			fmt.Println("id:", user.GetId())
 		}).ToJson())
 
-	fmt.Println(models.UserModel().Where("id", ">", 0).Delete())
+	fmt.Println(models.UserQuery().Where("id", ">", 0).Delete())
 }
