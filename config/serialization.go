@@ -9,8 +9,8 @@ import (
 func init() {
 	configs["serialization"] = func(env contracts.Env) interface{} {
 		return serialization.Config{
-			Default: "json",
-			Class: []contracts.Class{
+			Default: "json", // 支持：json、gob、xml。
+			Class: []contracts.Class{ // 需要序列化的类
 				jobs.DemoClass,
 			},
 		}

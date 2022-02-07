@@ -9,7 +9,7 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.4
-	github.com/goal-web/contracts v0.1.33
+	github.com/goal-web/contracts v0.1.34
 	github.com/goal-web/database v0.1.3
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
@@ -19,9 +19,9 @@ require (
 	github.com/goal-web/http v0.1.2
 	github.com/goal-web/pipeline v0.1.5
 	github.com/goal-web/querybuilder v0.1.12
-	github.com/goal-web/queue v0.0.0-00010101000000-000000000000
+	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
-	github.com/goal-web/serialization v0.1.5
+	github.com/goal-web/serialization v0.1.6
 	github.com/goal-web/session v0.1.3
 	github.com/goal-web/supports v0.1.13
 	github.com/golang-jwt/jwt v3.2.2+incompatible
@@ -52,6 +52,7 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-sqlite3 v1.14.10 // indirect
 	github.com/modood/table v0.0.0-20200225102042-88de94bb9876 // indirect
+	github.com/nsqio/go-nsq v1.1.0 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect

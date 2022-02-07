@@ -9,7 +9,7 @@ import (
 
 func TestBenchKafka(t *testing.T) {
 	wg := sync.WaitGroup{}
-	for i := 0; i < 100000; i++ {
+	for i := 0; i < 10000; i++ {
 		wg.Add(1)
 		go func(int2 int) {
 			http.Get(fmt.Sprintf("http://localhost:8008/queue?info=bench-%d", int2))
