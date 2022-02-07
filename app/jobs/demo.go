@@ -5,6 +5,8 @@ import (
 	"github.com/goal-web/queue"
 	"github.com/goal-web/supports/class"
 	"github.com/goal-web/supports/logs"
+	"github.com/goal-web/supports/utils"
+	"time"
 )
 
 var DemoClass = class.Make(new(Demo))
@@ -16,7 +18,15 @@ type Demo struct {
 
 func NewDemo(info string) contracts.Job {
 	return &Demo{
-		Job:  queue.Base("default"),
+		Job: &queue.Job{
+			UUID:       utils.RandStr(5),
+			CreatedAt:  time.Now().Unix(),
+			Queue:      "default",
+			Connection: "default",
+			Tries:      0,
+			MaxTries:   3,
+			Timeout:    0,
+		},
 		Info: info,
 	}
 }

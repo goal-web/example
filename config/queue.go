@@ -16,6 +16,7 @@ func init() {
 			Connections: map[string]contracts.Fields{
 				"default": {
 					"driver":  "kafka",
+					"delay":   "delay_queue", // 延迟队列名
 					"brokers": strings.Split(env.GetString("queue.kafka.brokers"), ","),
 					"queue": []string{
 						"default", "slow", "high",

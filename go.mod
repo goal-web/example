@@ -9,7 +9,7 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.4
-	github.com/goal-web/contracts v0.1.32
+	github.com/goal-web/contracts v0.1.33
 	github.com/goal-web/database v0.1.3
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
@@ -21,7 +21,7 @@ require (
 	github.com/goal-web/querybuilder v0.1.12
 	github.com/goal-web/queue v0.0.0-00010101000000-000000000000
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
-	github.com/goal-web/serialization v0.1.3
+	github.com/goal-web/serialization v0.1.5
 	github.com/goal-web/session v0.1.3
 	github.com/goal-web/supports v0.1.13
 	github.com/golang-jwt/jwt v3.2.2+incompatible
