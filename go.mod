@@ -11,7 +11,7 @@ require (
 	github.com/goal-web/container v0.1.4
 	github.com/goal-web/contracts v0.1.35
 	github.com/goal-web/database v0.1.3
-	github.com/goal-web/email v0.1.0
+	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
