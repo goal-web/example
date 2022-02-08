@@ -4,12 +4,12 @@ go 1.17
 
 require (
 	github.com/goal-web/application v0.1.0
-	github.com/goal-web/auth v0.1.1
+	github.com/goal-web/auth v0.1.2
 	github.com/goal-web/cache v0.0.0-20220120131444-19db721c20bf
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.4
-	github.com/goal-web/contracts v0.1.35
+	github.com/goal-web/contracts v0.1.36
 	github.com/goal-web/database v0.1.3
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
@@ -17,10 +17,11 @@ require (
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/goal v0.1.0
 	github.com/goal-web/hashing v0.1.0
-	github.com/goal-web/http v0.1.2
-	github.com/goal-web/pipeline v0.1.5
+	github.com/goal-web/http v0.1.3
+	github.com/goal-web/pipeline v0.1.6
 	github.com/goal-web/querybuilder v0.1.12
 	github.com/goal-web/queue v0.1.1
+	github.com/goal-web/ratelimiter v0.1.2
 	github.com/goal-web/redis v0.0.0-20220120142441-d9fea47c5755
 	github.com/goal-web/serialization v0.1.6
 	github.com/goal-web/session v0.1.3
@@ -35,6 +36,7 @@ require (
 )
 
 require (
+	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/apex/log v1.9.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -63,6 +65,7 @@ require (
 	github.com/smartystreets/goconvey v1.7.2 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
+	go.uber.org/ratelimit v0.2.0 // indirect
 	golang.org/x/crypto v0.0.0-20220128200615-198e4374d7ed // indirect
 	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
 	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect

@@ -21,6 +21,7 @@ import (
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/http"
 	"github.com/goal-web/queue"
+	"github.com/goal-web/ratelimiter"
 	"github.com/goal-web/redis"
 	"github.com/goal-web/serialization"
 	"github.com/goal-web/session"
@@ -55,6 +56,7 @@ func main() {
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
 		&database.ServiceProvider{},
+		&ratelimiter.ServiceProvider{},
 		&console.ServiceProvider{
 			ConsoleProvider: console2.NewKernel,
 		},

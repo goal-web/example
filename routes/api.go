@@ -12,6 +12,7 @@ func ApiRoutes(router contracts.Router) {
 	router.Get("/queue", controllers.DemoJob)
 
 	router.Get("/", controllers.HelloWorld)
+	//router.Get("/", controllers.HelloWorld, ratelimiter.Middleware(100))
 	router.Get("/counter", controllers.Counter, session.StartSession)
 	router.Get("/db", controllers.DatabaseQuery)
 	router.Get("/redis", controllers.RedisExample)
