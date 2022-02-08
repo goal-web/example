@@ -23,4 +23,6 @@ func ApiRoutes(router contracts.Router) {
 	authRouter := router.Group("", auth.Guard("jwt"))
 	authRouter.Get("/myself", controllers.GetCurrentUser, auth.Guard("jwt"))
 
+	router.Post("/mail", controllers.SendEmail)
+
 }

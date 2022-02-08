@@ -9,8 +9,9 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.4
-	github.com/goal-web/contracts v0.1.34
+	github.com/goal-web/contracts v0.1.35
 	github.com/goal-web/database v0.1.3
+	github.com/goal-web/email v0.1.0
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
@@ -41,7 +42,6 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goal-web/collection v0.1.4 // indirect
-	github.com/goal-web/email v0.0.0-20220208035117-461344a5ffdb // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
 	github.com/jmoiron/sqlx v1.3.4 // indirect
