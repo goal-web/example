@@ -8,6 +8,7 @@ import (
 	"github.com/goal-web/console"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database"
+	"github.com/goal-web/email"
 	"github.com/goal-web/encryption"
 	"github.com/goal-web/events"
 	console2 "github.com/goal-web/example/app/console"
@@ -46,6 +47,7 @@ func main() {
 		hashing.ServiceProvider{},
 		encryption.ServiceProvider{},
 		filesystem.ServiceProvider{},
+		&serialization.ServiceProvider{},
 		events.ServiceProvider{},
 		redis.ServiceProvider{},
 		cache.ServiceProvider{},
@@ -56,8 +58,8 @@ func main() {
 		&console.ServiceProvider{
 			ConsoleProvider: console2.NewKernel,
 		},
-		&serialization.ServiceProvider{},
 		&queue.ServiceProvider{},
+		&email.ServiceProvider{},
 		providers.AppServiceProvider{},
 		&http.ServiceProvider{RouteCollectors: []interface{}{
 			func(router contracts.Router) {
