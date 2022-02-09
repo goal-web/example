@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database/table"
-	"github.com/goal-web/example/models"
+	"github.com/goal-web/example/app/models"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

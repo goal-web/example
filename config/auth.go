@@ -3,17 +3,14 @@ package config
 import (
 	"github.com/goal-web/auth"
 	"github.com/goal-web/contracts"
-	"github.com/goal-web/example/models"
+	"github.com/goal-web/example/app/models"
 	"github.com/golang-jwt/jwt"
 )
 
 func init() {
 	configs["auth"] = func(env contracts.Env) interface{} {
 		return auth.Config{
-			Defaults: struct {
-				Guard string
-				User  string
-			}{
+			Defaults: auth.Defaults{
 				Guard: env.StringOption("auth.default", "jwt"),
 				User:  env.StringOption("auth.user", "db"),
 			},

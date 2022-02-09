@@ -62,7 +62,8 @@ func main() {
 		},
 		&queue.ServiceProvider{},
 		&email.ServiceProvider{},
-		providers.AppServiceProvider{},
+		providers.App{},
+		providers.Gate(),
 		&http.ServiceProvider{RouteCollectors: []interface{}{
 			func(router contracts.Router) {
 				router.Static("/", "public")

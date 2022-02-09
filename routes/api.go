@@ -2,14 +2,18 @@ package routes
 
 import (
 	"github.com/goal-web/auth"
+	"github.com/goal-web/auth/gate"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/example/app/http/controllers"
+	"github.com/goal-web/example/app/models"
 	"github.com/goal-web/session"
 )
 
 func ApiRoutes(router contracts.Router) {
 
 	router.Get("/queue", controllers.DemoJob)
+
+	router.Post("/article", controllers.CreateArticle, gate.Authorize("create", models.ArticleModel))
 
 	router.Get("/", controllers.HelloWorld)
 	//router.Get("/", controllers.HelloWorld, ratelimiter.Middleware(100))

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/goal-web/contracts"
-	"github.com/goal-web/example/models"
+	"github.com/goal-web/example/app/models"
 )
 
 func LoginExample(guard contracts.Guard) contracts.Fields {

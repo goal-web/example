@@ -7,10 +7,10 @@ import (
 	"github.com/golang-module/carbon/v2"
 )
 
-type AppServiceProvider struct {
+type App struct {
 }
 
-func (this AppServiceProvider) Register(app contracts.Application) {
+func (this App) Register(app contracts.Application) {
 	app.Call(func(config contracts.Config, dispatcher contracts.EventDispatcher) {
 		appConfig := config.Get("app").(application.Config)
 		carbon.SetLocale(appConfig.Locale)
@@ -20,10 +20,10 @@ func (this AppServiceProvider) Register(app contracts.Application) {
 	})
 }
 
-func (this AppServiceProvider) Start() error {
+func (this App) Start() error {
 
 	return nil
 }
 
-func (this AppServiceProvider) Stop() {
+func (this App) Stop() {
 }
