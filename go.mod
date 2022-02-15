@@ -9,7 +9,7 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.40
+	github.com/goal-web/contracts v0.1.41
 	github.com/goal-web/database v0.1.5
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
@@ -25,7 +25,7 @@ require (
 	github.com/goal-web/redis v0.1.0
 	github.com/goal-web/serialization v0.1.6
 	github.com/goal-web/session v0.1.3
-	github.com/goal-web/supports v0.1.16
+	github.com/goal-web/supports v0.1.17
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
@@ -44,7 +44,7 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
-	github.com/goal-web/collection v0.1.4 // indirect
+	github.com/goal-web/collection v0.1.5 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
@@ -52,7 +52,6 @@ require (
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible // indirect
 	github.com/klauspost/compress v1.14.2 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
-	github.com/labstack/echo v3.3.10+incompatible // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
 	github.com/lib/pq v1.10.4 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect
@@ -67,7 +66,6 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/segmentio/kafka-go v0.4.27 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
-	github.com/smartystreets/goconvey v1.7.2 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
 	go.opentelemetry.io/otel v1.3.0 // indirect
@@ -84,6 +82,7 @@ replace (
 	github.com/goal-web/application => ../application
 	github.com/goal-web/auth => ../auth
 	github.com/goal-web/cache => ../cache
+	github.com/goal-web/collection => ../collection
 	github.com/goal-web/console => ../console
 	github.com/goal-web/container => ../container
 	github.com/goal-web/contracts => ../contracts
@@ -97,6 +96,5 @@ replace (
 	github.com/goal-web/serialization => ../serialization
 	github.com/goal-web/session => ../session
 	github.com/goal-web/supports => ../supports
-	github.com/goal-web/collection => ../collection
 
 )

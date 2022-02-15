@@ -2,9 +2,9 @@ package tests
 
 import (
 	"fmt"
-	"github.com/goal-web/console/commands"
 	"github.com/goal-web/console/inputs"
 	"github.com/goal-web/console/scheduling"
+	"github.com/goal-web/supports/commands"
 	"github.com/golang-module/carbon/v2"
 	"github.com/gorhill/cronexpr"
 	"github.com/stretchr/testify/assert"
@@ -53,14 +53,14 @@ func TestParseCommandLineArgs(t *testing.T) {
 }
 
 type TestCommand struct {
-	commands.Base
+	commands.Command
 	t *testing.T
 }
 
 func NewTestCommand(t *testing.T) TestCommand {
 	return TestCommand{
-		Base: commands.BaseCommand("tests {name} {avatar?} {--queue=redis} {--daemon} {--v}", "测试一下命令行"),
-		t:    t,
+		Command: commands.Base("tests {name} {avatar?} {--queue=redis} {--daemon} {--v}", "测试一下命令行"),
+		t:       t,
 	}
 }
 
