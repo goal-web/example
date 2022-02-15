@@ -7,6 +7,7 @@ import (
 	"github.com/goal-web/config"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database"
+	"github.com/goal-web/email"
 	"github.com/goal-web/encryption"
 	"github.com/goal-web/events"
 	config2 "github.com/goal-web/example/config"
@@ -19,10 +20,14 @@ import (
 	"github.com/goal-web/supports/logs"
 )
 
-func initApp(path string) contracts.Application {
+func initApp(path ...string) contracts.Application {
+	runPath := "/Users/qbhy/project/go/goal-web/example"
+	if len(path) > 0 {
+		runPath = path[0]
+	}
 	env := "testing"
 	app := application.Singleton()
-	app.Instance("path", path)
+	app.Instance("path", runPath)
 
 	// 设置异常处理器
 	app.Singleton("exceptions.handler", func() contracts.ExceptionHandler {
@@ -32,7 +37,7 @@ func initApp(path string) contracts.Application {
 	app.RegisterServices(
 		&config.ServiceProvider{
 			Env:             env,
-			Paths:           []string{path},
+			Paths:           []string{runPath},
 			Sep:             "=",
 			ConfigProviders: config2.Configs(),
 		},
@@ -45,6 +50,7 @@ func initApp(path string) contracts.Application {
 		&signal.ServiceProvider{},
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
+		&email.ServiceProvider{},
 		&database.ServiceProvider{},
 		//&http.ServiceProvider{RouteCollectors: []interface{}{
 		//	// 路由收集器

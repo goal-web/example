@@ -11,7 +11,7 @@ import (
 
 func getQuery(name string) contracts.QueryBuilder {
 	// 测试用例环境下的简易 goal 应用启动
-	app := initApp("/Users/qbhy/project/go/goal-web/goal/tests")
+	app := initApp("/Users/qbhy/project/go/goal-web/example/tests")
 
 	//return  table.Query("users") 返回 table 实例，使用默认连接
 	//tx, _ := app.Get("db").(contracts.DBConnection).Begin()
@@ -46,6 +46,7 @@ func TestTableQuery(t *testing.T) {
 	assert.True(t, num == 1)
 	// 判断修改后的数据
 	user = getQuery("users").Where("name", "goal").First().(contracts.Fields)
+	fmt.Println("user", user)
 
 	err := getQuery("users").Chunk(10, func(collection contracts.Collection, page int) error {
 		assert.True(t, collection.Len() == 1)
@@ -58,17 +59,13 @@ func TestTableQuery(t *testing.T) {
 	assert.True(t, user["id"] == userId)
 	assert.True(t, user["name"] == "goal")
 	assert.True(t, getQuery("users").Find(userId).(contracts.Fields)["id"] == userId)
+	fmt.Println("find:", getQuery("users").Find(userId))
 	assert.True(t, getQuery("users").Where("id", userId).Delete() == 1)
 	assert.Nil(t, getQuery("users").Find(userId))
 }
 
 func TestModel(t *testing.T) {
-	initApp("/Users/qbhy/project/go/goal-web/goal/tests")
-
-	fmt.Println("用table查询：",
-		getQuery("users").Get().Map(func(user contracts.Fields) {
-			fmt.Println("用table查询", user)
-		}).ToJson()) // query 返回 Collection<contracts.Fields>
+	initApp("/Users/qbhy/project/go/goal-web/example/tests")
 
 	user := models.UserQuery().Create(contracts.Fields{
 		"name": "qbhy",
@@ -88,4 +85,25 @@ func TestModel(t *testing.T) {
 		}).ToJson())
 
 	fmt.Println(models.UserQuery().Where("id", ">", 0).Delete())
+}
+
+func TestClickhouse(t *testing.T) {
+	initApp("/Users/qbhy/project/go/goal-web/example")
+
+	var UserQuery = func() *table.Table {
+		return table.WithConnection("users", "clickhouse")
+	}
+
+	user := UserQuery().Create(contracts.Fields{
+		"name": "qbhy",
+	})
+
+	fmt.Println("创建后返回", user)
+
+	fmt.Println("用table查询：",
+		UserQuery().Get().Map(func(user contracts.Fields) {
+			fmt.Println("用table查询", user)
+		}).ToJson()) // query 返回 Collection<contracts.Fields>
+
+	fmt.Println(UserQuery().Where("id", ">", 0).Delete())
 }

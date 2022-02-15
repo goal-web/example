@@ -15,6 +15,7 @@ import (
 	"github.com/goal-web/example/app/exceptions"
 	"github.com/goal-web/example/app/providers"
 	config2 "github.com/goal-web/example/config"
+	"github.com/goal-web/example/database/migrations"
 	"github.com/goal-web/example/routes"
 	"github.com/goal-web/filesystem"
 	"github.com/goal-web/goal/signal"
@@ -55,11 +56,11 @@ func main() {
 		&signal.ServiceProvider{},
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
-		&database.ServiceProvider{},
 		&ratelimiter.ServiceProvider{},
 		&console.ServiceProvider{
 			ConsoleProvider: console2.NewKernel,
 		},
+		database.Service(migrations.Migrations),
 		&queue.ServiceProvider{},
 		&email.ServiceProvider{},
 		providers.App{},

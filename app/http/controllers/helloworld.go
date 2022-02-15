@@ -9,6 +9,17 @@ import (
 	"strconv"
 )
 
+/**
+Running 30s test @ http://localhost:8008
+  10 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.65ms   58.26ms   1.36s    91.14%
+    Req/Sec     2.39k     2.16k   11.90k    68.85%
+  615610 requests in 30.09s, 75.73MB read
+  Socket errors: connect 759, read 34, write 0, timeout 0
+Requests/sec:  20456.33
+Transfer/sec:      2.52MB
+*/
 func HelloWorld() string {
 	return "hello, goal."
 }

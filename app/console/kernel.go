@@ -2,13 +2,13 @@ package console
 
 import (
 	"github.com/goal-web/console"
-	"github.com/goal-web/console/commands"
 	"github.com/goal-web/contracts"
 	commands2 "github.com/goal-web/example/app/console/commands"
+	"github.com/goal-web/goal/commands"
 )
 
 func NewKernel(app contracts.Application) contracts.Console {
-	return &Kernel{console.NewKernel(app, []console.CommandProvider{
+	return &Kernel{console.NewKernel(app, []contracts.CommandProvider{
 		commands.Runner,
 		commands2.NewHello,
 	}), app}

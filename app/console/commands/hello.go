@@ -1,19 +1,19 @@
 package commands
 
 import (
-	"github.com/goal-web/console/commands"
 	"github.com/goal-web/contracts"
+	"github.com/goal-web/supports/commands"
 	"github.com/goal-web/supports/logs"
 )
 
 func NewHello(app contracts.Application) contracts.Command {
 	return &Hello{
-		Base: commands.BaseCommand("hello {say}", "打印 hello goal"),
+		Command: commands.Base("hello {say}", "打印 hello goal"),
 	}
 }
 
 type Hello struct {
-	commands.Base
+	commands.Command
 }
 
 func (this Hello) Handle() interface{} {

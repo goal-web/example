@@ -1,4 +1,6 @@
-database/*
+database/*.sqlite
 public/*
 goal.pid
 storage/*
+
+/real.env

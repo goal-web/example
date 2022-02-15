@@ -15,6 +15,7 @@ func (d DebugQuery) Handle(event contracts.Event) {
 			"sql":        e.Sql,
 			"bindings":   e.Bindings,
 			"connection": e.Connection,
+			"time":       e.Time,
 		}).Info("sql executed")
 	}
 }

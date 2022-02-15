@@ -3,6 +3,7 @@ package config
 import (
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database"
+	"strings"
 )
 
 func init() {
@@ -12,7 +13,7 @@ func init() {
 			Connections: map[string]contracts.Fields{
 				"sqlite": {
 					"driver":   "sqlite",
-					"database": env.GetString("sqlite.database"),
+					"database": env.GetString("db.sqlite.database"),
 				},
 				"mysql": {
 					"driver":          "mysql",
@@ -43,7 +44,19 @@ func init() {
 					"max_connections": env.GetInt("db.pgsql.max_connections"),
 					"max_idles":       env.GetInt("db.pgsql.max_idles"),
 				},
+				"clickhouse": {
+					"driver":          "clickhouse",
+					"dsn":             "tcp://127.0.0.1:9000/default?debug=true", // see https://github.com/ClickHouse/clickhouse-go#dsn
+					"max_connections": env.GetInt("db.clickhouse.max_connections"),
+					"max_idles":       env.GetInt("db.clickhouse.max_idles"),
+					"address":         strings.Split(env.GetString("db.clickhouse.address"), ","),
+					"database":        env.GetString("db.clickhouse.database"),
+					"username":        env.GetString("db.clickhouse.username"),
+					"password":        env.GetString("db.clickhouse.password"),
+					"debug":           env.GetString("db.clickhouse.debug"),
+				},
 			},
+			Migrations: "migrations",
 		}
 	}
 }
