@@ -5,12 +5,13 @@ go 1.17
 require (
 	github.com/goal-web/application v0.1.2
 	github.com/goal-web/auth v0.1.4
+	github.com/goal-web/bloomfilter v0.0.0-00010101000000-000000000000
 	github.com/goal-web/cache v0.1.0
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.5
 	github.com/goal-web/contracts v0.1.42
-	github.com/goal-web/database v0.1.5
+	github.com/goal-web/database v0.1.7
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
@@ -39,6 +40,7 @@ require (
 	github.com/ClickHouse/clickhouse-go/v2 v2.0.9 // indirect
 	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/apex/log v1.9.0 // indirect
+	github.com/bits-and-blooms/bitset v1.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -81,6 +83,7 @@ require (
 replace (
 	github.com/goal-web/application => ../application
 	github.com/goal-web/auth => ../auth
+	github.com/goal-web/bloomfilter => ../bloomfilter
 	github.com/goal-web/cache => ../cache
 	github.com/goal-web/collection => ../collection
 	github.com/goal-web/console => ../console

@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/goal-web/application"
 	"github.com/goal-web/auth"
+	"github.com/goal-web/bloomfilter"
 	"github.com/goal-web/cache"
 	"github.com/goal-web/config"
 	"github.com/goal-web/console"
@@ -53,6 +54,7 @@ func main() {
 		events.ServiceProvider{},
 		redis.ServiceProvider{},
 		cache.ServiceProvider{},
+		&bloomfilter.ServiceProvider{},
 		&signal.ServiceProvider{},
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
