@@ -10,7 +10,7 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.42
+	github.com/goal-web/contracts v0.1.44
 	github.com/goal-web/database v0.1.7
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
@@ -23,7 +23,7 @@ require (
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/ratelimiter v0.1.2
-	github.com/goal-web/redis v0.1.0
+	github.com/goal-web/redis v0.1.2
 	github.com/goal-web/serialization v0.1.6
 	github.com/goal-web/session v0.1.3
 	github.com/goal-web/supports v0.1.17

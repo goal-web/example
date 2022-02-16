@@ -3,13 +3,16 @@ package tests
 import (
 	"github.com/goal-web/application"
 	"github.com/goal-web/auth"
+	"github.com/goal-web/bloomfilter"
 	"github.com/goal-web/cache"
 	"github.com/goal-web/config"
+	"github.com/goal-web/console"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database"
 	"github.com/goal-web/email"
 	"github.com/goal-web/encryption"
 	"github.com/goal-web/events"
+	console2 "github.com/goal-web/example/app/console"
 	config2 "github.com/goal-web/example/config"
 	"github.com/goal-web/filesystem"
 	"github.com/goal-web/goal/exceptions"
@@ -41,11 +44,17 @@ func initApp(path ...string) contracts.Application {
 			Sep:             "=",
 			ConfigProviders: config2.Configs(),
 		},
+		&console.ServiceProvider{
+			ConsoleProvider: func(application contracts.Application) contracts.Console {
+				return console2.NewKernel(application)
+			},
+		},
 		hashing.ServiceProvider{},
 		encryption.ServiceProvider{},
 		filesystem.ServiceProvider{},
 		events.ServiceProvider{},
 		redis.ServiceProvider{},
+		&bloomfilter.ServiceProvider{},
 		cache.ServiceProvider{},
 		&signal.ServiceProvider{},
 		&session.ServiceProvider{},
