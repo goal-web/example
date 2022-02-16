@@ -9,7 +9,7 @@ require (
 	github.com/goal-web/config v0.1.0
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.41
+	github.com/goal-web/contracts v0.1.42
 	github.com/goal-web/database v0.1.5
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
