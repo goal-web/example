@@ -2,6 +2,8 @@ package tests
 
 import (
 	"github.com/goal-web/application"
+	"github.com/goal-web/application/exceptions"
+	"github.com/goal-web/application/signal"
 	"github.com/goal-web/auth"
 	"github.com/goal-web/bloomfilter"
 	"github.com/goal-web/cache"
@@ -15,8 +17,6 @@ import (
 	console2 "github.com/goal-web/example/app/console"
 	config2 "github.com/goal-web/example/config"
 	"github.com/goal-web/filesystem"
-	"github.com/goal-web/goal/exceptions"
-	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/redis"
 	"github.com/goal-web/session"

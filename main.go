@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/goal-web/application"
+	"github.com/goal-web/application/signal"
 	"github.com/goal-web/auth"
 	"github.com/goal-web/bloomfilter"
 	"github.com/goal-web/cache"
@@ -19,7 +20,6 @@ import (
 	"github.com/goal-web/example/database/migrations"
 	"github.com/goal-web/example/routes"
 	"github.com/goal-web/filesystem"
-	"github.com/goal-web/goal/signal"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/http"
 	"github.com/goal-web/queue"
@@ -55,7 +55,6 @@ func main() {
 		redis.ServiceProvider{},
 		cache.ServiceProvider{},
 		&bloomfilter.ServiceProvider{},
-		&signal.ServiceProvider{},
 		&session.ServiceProvider{},
 		auth.ServiceProvider{},
 		&ratelimiter.ServiceProvider{},
@@ -65,8 +64,6 @@ func main() {
 		database.Service(migrations.Migrations),
 		&queue.ServiceProvider{},
 		&email.ServiceProvider{},
-		providers.App{},
-		providers.Gate(),
 		&http.ServiceProvider{RouteCollectors: []interface{}{
 			func(router contracts.Router) {
 				router.Static("/", "public")
@@ -74,6 +71,9 @@ func main() {
 			// 路由收集器
 			routes.ApiRoutes,
 		}},
+		providers.App{},
+		providers.Gate(),
+		&signal.ServiceProvider{},
 	)
 
 	app.Call(func(console3 contracts.Console, input contracts.ConsoleInput) {

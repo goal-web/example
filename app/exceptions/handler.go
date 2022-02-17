@@ -5,6 +5,7 @@ import (
 	"github.com/goal-web/http"
 	"github.com/goal-web/supports/logs"
 	"github.com/goal-web/supports/utils"
+	"github.com/goal-web/validation"
 	"reflect"
 	"runtime/debug"
 	"strings"
@@ -22,13 +23,9 @@ func (handler *ExceptionHandler) Handle(exception contracts.Exception) interface
 	logs.WithException(exception).Warn("报错了")
 	switch e := exception.(type) {
 	case http.Exception: // http 支持在异常处理器返回响应
-		if !strings.Contains(e.Error(), "404") {
-			debug.PrintStack()
-		}
-		return contracts.Fields{
-			"path":  e.Request.Path(),
-			"error": e.Error(),
-		}
+		return handler.handleHttpException(e)
+	case validation.Exception:
+		return handler.renderValidationException(e)
 	default:
 		debug.PrintStack()
 	}
@@ -48,9 +45,32 @@ func (handler *ExceptionHandler) Handle(exception contracts.Exception) interface
 	return nil
 }
 
-func (handler *ExceptionHandler) Report(exception contracts.Exception) {
+func (handler *ExceptionHandler) handleHttpException(exception http.Exception) interface{} {
+
+	switch e := exception.Exception.(type) {
+	case validation.Exception:
+		return handler.renderValidationException(e)
+	default:
+		if !strings.Contains(exception.Error(), "404") {
+			debug.PrintStack()
+		}
+		return contracts.Fields{
+			"path":  exception.Request.Path(),
+			"error": e.Error(),
+		}
+	}
 }
 
+func (handler *ExceptionHandler) renderValidationException(exception validation.Exception) interface{} {
+	return contracts.Fields{
+		"msg":    exception.Error(),
+		"fields": exception.Fields(),
+		"errors": exception.GetErrors(),
+	}
+}
+
+func (handler *ExceptionHandler) Report(exception contracts.Exception) {
+}
 func (handler *ExceptionHandler) ShouldReport(exception contracts.Exception) bool {
 	return !utils.IsInstanceIn(exception, handler.dontReportExceptions...)
 }

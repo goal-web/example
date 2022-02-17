@@ -4,19 +4,18 @@ go 1.17
 
 require (
 	github.com/goal-web/application v0.1.2
-	github.com/goal-web/auth v0.1.4
-	github.com/goal-web/bloomfilter v0.0.0-00010101000000-000000000000
+	github.com/goal-web/auth v0.1.5
+	github.com/goal-web/bloomfilter v0.1.1
 	github.com/goal-web/cache v0.1.0
-	github.com/goal-web/config v0.1.0
+	github.com/goal-web/config v0.1.1
 	github.com/goal-web/console v0.1.0
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.44
+	github.com/goal-web/contracts v0.1.46
 	github.com/goal-web/database v0.1.7
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
-	github.com/goal-web/goal v0.1.0
 	github.com/goal-web/hashing v0.1.0
 	github.com/goal-web/http v0.1.5
 	github.com/goal-web/pipeline v0.1.6
@@ -24,9 +23,10 @@ require (
 	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/ratelimiter v0.1.2
 	github.com/goal-web/redis v0.1.2
-	github.com/goal-web/serialization v0.1.6
+	github.com/goal-web/serialization v0.1.8
 	github.com/goal-web/session v0.1.3
-	github.com/goal-web/supports v0.1.17
+	github.com/goal-web/supports v0.1.18
+	github.com/goal-web/validation v0.0.0-20220217024452-fad5fb14d007
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
@@ -44,6 +44,9 @@ require (
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/go-playground/locales v0.14.0 // indirect
+	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goal-web/collection v0.1.5 // indirect
@@ -53,8 +56,8 @@ require (
 	github.com/jmoiron/sqlx v1.3.4 // indirect
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible // indirect
 	github.com/klauspost/compress v1.14.2 // indirect
-	github.com/kr/pretty v0.3.0 // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
+	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/lib/pq v1.10.4 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
@@ -86,18 +89,19 @@ replace (
 	github.com/goal-web/bloomfilter => ../bloomfilter
 	github.com/goal-web/cache => ../cache
 	github.com/goal-web/collection => ../collection
+	github.com/goal-web/config => ../config
 	github.com/goal-web/console => ../console
 	github.com/goal-web/container => ../container
 	github.com/goal-web/contracts => ../contracts
 	github.com/goal-web/database => ../database
 	github.com/goal-web/email => ../email
 	github.com/goal-web/encryption => ../encryption
-	github.com/goal-web/goal => ../goal
 	github.com/goal-web/http => ../http
 	github.com/goal-web/queue => ../queue
 	github.com/goal-web/redis => ../redis
 	github.com/goal-web/serialization => ../serialization
 	github.com/goal-web/session => ../session
 	github.com/goal-web/supports => ../supports
+	github.com/goal-web/validation => ../validation
 
 )
