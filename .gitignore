@@ -4,3 +4,5 @@ goal.pid
 storage/*
 
 /real.env
+
+/bin_*

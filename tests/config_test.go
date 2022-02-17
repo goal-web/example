@@ -9,14 +9,14 @@ import (
 )
 
 func TestBaseConfig(t *testing.T) {
+	path, _ := os.Getwd()
 
-	conf := config.NewConfig("testing")
+	conf := config.NewConfig(config.NewEnv([]string{path}, "="), map[string]contracts.ConfigProvider{})
 
 	conf.Load(config.FieldsProvider{Data: map[string]interface{}{
 		"a": "a",
 	}})
 
-	path, _ := os.Getwd()
 	conf.Load(config.NewEnv([]string{path}, "="))
 
 	// 测试从环境变量获取配置

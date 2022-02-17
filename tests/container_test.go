@@ -10,6 +10,10 @@ import (
 	"testing"
 )
 
+type DemoParam struct {
+	Id string
+}
+
 func TestArgumentsTypeMap(t *testing.T) {
 	args := container.NewArgumentsTypeMap([]interface{}{"啦啦啦", DemoParam{Id: "111"}})
 	str := args.Pull("string")

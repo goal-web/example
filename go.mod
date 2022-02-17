@@ -3,7 +3,7 @@ module github.com/goal-web/example
 go 1.17
 
 require (
-	github.com/goal-web/application v0.1.2
+	github.com/goal-web/application v0.1.4
 	github.com/goal-web/auth v0.1.5
 	github.com/goal-web/bloomfilter v0.1.1
 	github.com/goal-web/cache v0.1.0
@@ -22,7 +22,7 @@ require (
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/ratelimiter v0.1.2
-	github.com/goal-web/redis v0.1.2
+	github.com/goal-web/redis v0.1.3
 	github.com/goal-web/serialization v0.1.8
 	github.com/goal-web/session v0.1.3
 	github.com/goal-web/supports v0.1.18
