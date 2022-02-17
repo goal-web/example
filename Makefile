@@ -33,6 +33,15 @@ build-windows:
 build-mac:
 	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 $(GOBUILD) -o ./bin_mac -v ./
 
+win-build-linux:
+	SET CGO_ENABLED=0 SET GOOS=linux SET GOARCH=amd64 $(GOBUILD) -o ./bin_linux -v ./
+
+win-build-mac:
+	SET CGO_ENABLED=0 SET GOOS=darwin SET GOARCH=amd64 $(GOBUILD) -o ./bin_mac -v ./
+
+win-build:
+	$(GOBUILD) -o ./bin_goal.exe -v ./
+
 build:
 	$(GOBUILD) -o ./bin_goal -v ./
 
