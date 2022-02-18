@@ -17,7 +17,7 @@ require (
 	github.com/goal-web/events v0.1.5
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/hashing v0.1.0
-	github.com/goal-web/http v0.1.5
+	github.com/goal-web/http v0.1.6
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/ratelimiter v0.1.2
