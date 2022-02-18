@@ -22,6 +22,7 @@ import (
 	"github.com/goal-web/filesystem"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/http"
+	"github.com/goal-web/http/sse"
 	"github.com/goal-web/queue"
 	"github.com/goal-web/ratelimiter"
 	"github.com/goal-web/redis"
@@ -69,7 +70,9 @@ func main() {
 			// 路由收集器
 			routes.ApiRoutes,
 			routes.WebSocketRoutes,
+			routes.SseRoutes,
 		}},
+		sse.ServiceProvider{},
 		websocket.ServiceProvider{},
 		providers.App{},
 		providers.Gate(),
