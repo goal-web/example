@@ -8,7 +8,7 @@ require (
 	github.com/goal-web/bloomfilter v0.1.1
 	github.com/goal-web/cache v0.1.0
 	github.com/goal-web/config v0.1.1
-	github.com/goal-web/console v0.1.0
+	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
 	github.com/goal-web/contracts v0.1.46
 	github.com/goal-web/database v0.1.7
@@ -18,7 +18,6 @@ require (
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/hashing v0.1.0
 	github.com/goal-web/http v0.1.5
-	github.com/goal-web/pipeline v0.1.6
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
 	github.com/goal-web/ratelimiter v0.1.2
