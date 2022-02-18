@@ -27,6 +27,7 @@ import (
 	"github.com/goal-web/redis"
 	"github.com/goal-web/serialization"
 	"github.com/goal-web/session"
+	"github.com/goal-web/websocket"
 	"os"
 )
 
@@ -69,6 +70,7 @@ func main() {
 			routes.ApiRoutes,
 			routes.WebSocketRoutes,
 		}},
+		websocket.ServiceProvider{},
 		providers.App{},
 		providers.Gate(),
 		&signal.ServiceProvider{},

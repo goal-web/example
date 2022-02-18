@@ -1,43 +1,39 @@
 package routes
 
 import (
+	"errors"
 	"fmt"
 	"github.com/goal-web/contracts"
-	"github.com/goal-web/http"
-	"github.com/gorilla/websocket"
+	"github.com/goal-web/websocket"
 )
 
-var (
-	upgrade = websocket.Upgrader{}
-)
-
-func WebSocketRoutes(router contracts.Router) {
-
-	router.Static("/", "/")
-
-	router.Get("/ws", WebSocket)
+type DemoWSController struct {
 }
 
-func WebSocket(request *http.Request) error {
-	ws, err := upgrade.Upgrade(request.Context.Response(), request.Request(), nil)
-	if err != nil {
-		return err
+func (d DemoWSController) OnConnect(request contracts.HttpRequest) error {
+	if request.GetString("username") == "goal" {
+		return nil
 	}
+	return errors.New("不允许连接")
+}
 
-	defer ws.Close()
+func (d DemoWSController) OnMessage(frame contracts.WebSocketFrame) {
+	fmt.Println("收到消息", frame.RawString(), frame.Connection().Fd())
+	_ = frame.Send("来自服务器的回复1")
+	_ = frame.SendBytes([]byte("来自服务器的回复2"))
+}
 
-	for {
-		// Write
-		err = ws.WriteMessage(websocket.TextMessage, []byte("Hello, Client!"))
-		if err != nil {
-			request.Logger().Error(err)
-		}
+func WebSocketRoutes(router contracts.Router) {
+	router.Static("/", "/")
 
-		// Read
-		_, msg, err := ws.ReadMessage()
-		if err != nil {
-			request.Logger().Error(err)
-		}
-		fmt.Printf("%s\n", msg)
-	}
+	router.Get("/ws", websocket.New(DemoWSController{}))
+
+	router.Get("/ws", websocket.Default(func(frame contracts.WebSocketFrame) {
+
+		fmt.Println("收到消息", frame.RawString(), frame.Connection().Fd())
+		_ = frame.Send("来自服务器的回复1")
+		_ = frame.SendBytes([]byte("来自服务器的回复2"))
+
+	}))
+
 }

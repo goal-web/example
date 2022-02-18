@@ -10,7 +10,7 @@ require (
 	github.com/goal-web/config v0.1.1
 	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.46
+	github.com/goal-web/contracts v0.1.47
 	github.com/goal-web/database v0.1.7
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
@@ -26,10 +26,10 @@ require (
 	github.com/goal-web/session v0.1.4
 	github.com/goal-web/supports v0.1.18
 	github.com/goal-web/validation v0.1.0
+	github.com/goal-web/websocket v0.1.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
-	github.com/gorilla/websocket v1.4.1
 	github.com/labstack/echo/v4 v4.6.3
 	github.com/qbhy/parallel v1.4.0
 	github.com/stretchr/testify v1.7.0
@@ -50,9 +50,11 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goal-web/collection v0.1.5 // indirect
+	github.com/goal-web/pipeline v0.1.6 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/jmoiron/sqlx v1.3.4 // indirect
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible // indirect
 	github.com/klauspost/compress v1.14.2 // indirect
@@ -103,5 +105,6 @@ replace (
 	github.com/goal-web/session => ../session
 	github.com/goal-web/supports => ../supports
 	github.com/goal-web/validation => ../validation
+	github.com/goal-web/websocket => ../websocket
 
 )
