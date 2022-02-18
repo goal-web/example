@@ -26,7 +26,7 @@ require (
 	github.com/goal-web/session v0.1.4
 	github.com/goal-web/supports v0.1.18
 	github.com/goal-web/validation v0.1.0
-	github.com/goal-web/websocket v0.1.0
+	github.com/goal-web/websocket v0.1.1
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang-module/carbon/v2 v2.0.1
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
