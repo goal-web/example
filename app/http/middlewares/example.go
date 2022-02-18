@@ -4,10 +4,9 @@ import (
 	"fmt"
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/http"
-	"github.com/goal-web/pipeline"
 )
 
-func Example(request contracts.HttpRequest, next pipeline.Pipe) interface{} {
+func Example(request contracts.HttpRequest, next contracts.Pipe) interface{} {
 	fmt.Println("controller before")
 
 	result := next(request)

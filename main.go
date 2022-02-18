@@ -65,11 +65,9 @@ func main() {
 		&queue.ServiceProvider{},
 		&email.ServiceProvider{},
 		&http.ServiceProvider{RouteCollectors: []interface{}{
-			func(router contracts.Router) {
-				router.Static("/", "public")
-			},
 			// 路由收集器
 			routes.ApiRoutes,
+			routes.WebSocketRoutes,
 		}},
 		providers.App{},
 		providers.Gate(),

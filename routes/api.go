@@ -7,14 +7,9 @@ import (
 	"github.com/goal-web/example/app/http/controllers"
 	"github.com/goal-web/example/app/models"
 	"github.com/goal-web/session"
-	"github.com/goal-web/validation"
 )
 
 func ApiRoutes(router contracts.Router) {
-
-	router.Use(
-		validation.VerifyValidatable,
-	)
 
 	router.Get("/queue", controllers.DemoJob)
 
@@ -34,5 +29,4 @@ func ApiRoutes(router contracts.Router) {
 	authRouter.Get("/myself", controllers.GetCurrentUser, auth.Guard("jwt"))
 
 	router.Post("/mail", controllers.SendEmail)
-
 }
