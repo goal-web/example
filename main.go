@@ -76,6 +76,7 @@ func main() {
 		websocket.ServiceProvider{},
 		providers.App{},
 		providers.Gate(),
+		providers.Micro(),
 		&signal.ServiceProvider{},
 	)
 
