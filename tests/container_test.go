@@ -14,6 +14,10 @@ type DemoParam struct {
 	Id string
 }
 
+type DemoComponent struct {
+	Param DemoParam
+}
+
 func TestArgumentsTypeMap(t *testing.T) {
 	args := container.NewArgumentsTypeMap([]interface{}{"啦啦啦", DemoParam{Id: "111"}})
 	str := args.Pull("string")
@@ -108,7 +112,8 @@ type DemoStruct2 struct {
 	DemoStruct
 }
 
-func (d DemoStruct2) ShouldInject() {
+func (d *DemoStruct2) Construct(container2 contracts.Container) {
+	d.DemoStruct = container2.Get("struct").(DemoStruct)
 }
 
 // 调用方法支持注入自定义类
@@ -130,10 +135,11 @@ func TestAutoContainer(t *testing.T) {
 
 	app.Call(container.NewMagicalFunc(func(struct2 DemoStruct2) {
 		assert.True(t, struct2.Config == "config" && struct2.Param.Id == "id")
-	}), app.Get("struct"))
+	}))
 
-	app.Call(container.NewMagicalFunc(func(struct2 DemoStruct2) {
-		assert.True(t, struct2.Config == "config22" && struct2.Param.Id == "custom")
+	app.Call(container.NewMagicalFunc(func(struct2 DemoStruct2, struct1 DemoStruct) { // 因为 DemoStruct2 实现了 contracts.Component 所以不会使用自定义参数
+		assert.True(t, struct2.Config == "config" && struct2.Param.Id == "id")
+		assert.True(t, struct1.Config == "config22" && struct1.Param.Id == "custom")
 	}), DemoStruct{
 		Param:  DemoParam{Id: "custom"},
 		Config: "config22",
@@ -174,4 +180,58 @@ func TestCallAndDIContainer(t *testing.T) {
 	app.Call(container.NewMagicalFunc(func(container2 contracts.Container) {
 		fmt.Println(container2)
 	}))
+}
+
+func TestDIDontDefineValue(t *testing.T) {
+	app := container.New()
+
+	app.Call(func(name string, model contracts.Model) {
+		fmt.Println(name, model)
+	})
+}
+
+/**
+goos: darwin
+goarch: amd64
+pkg: github.com/goal-web/container/tests
+cpu: Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+BenchmarkCall
+BenchmarkCall-4   	  854979	      1175 ns/op
+*/
+func BenchmarkCall(b *testing.B) {
+	app := container.New()
+	app.Singleton("DemoDependent", func() DemoDependent {
+		return DemoDependent{
+			Id: "id ddd",
+		}
+	})
+
+	for i := 0; i < b.N; i++ {
+		app.Call(func(dependent DemoDependent) {
+
+		})
+	}
+}
+
+/**
+goos: darwin
+goarch: amd64
+pkg: github.com/goal-web/container/tests
+cpu: Intel(R) Core(TM) i7-7660U CPU @ 2.50GHz
+BenchmarkStaticCall
+BenchmarkStaticCall-4   	 1048639	      1074 ns/op
+*/
+func BenchmarkStaticCall(b *testing.B) {
+	app := container.New()
+	app.Singleton("DemoDependent", func() DemoDependent {
+		return DemoDependent{
+			Id: "id ddd",
+		}
+	})
+	staticFunc := container.NewMagicalFunc(func(dependent DemoDependent) {
+	})
+
+	for i := 0; i < b.N; i++ {
+		app.Call(staticFunc)
+	}
 }

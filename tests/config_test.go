@@ -53,7 +53,7 @@ func TestBaseConfig(t *testing.T) {
 	conf.Set("field", contracts.Fields{"tests": "tests"})
 	assert.True(t, conf.GetFields("field")["tests"] == "tests")
 
-	// 测试获取 子配置 实例
+	//测试获取 子配置 实例
 	assert.True(t, conf.GetConfig("sub_config") == nil)
 	assert.True(t, conf.GetConfig("sub").Get("a") == "sub a")
 

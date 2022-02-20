@@ -4,15 +4,13 @@ import (
 	"fmt"
 	"github.com/goal-web/contracts"
 	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
 )
 
 func TestHashing(t *testing.T) {
 	// 初始化容器
 
-	path, _ := os.Getwd()
-	app := initApp(path)
+	app := initApp()
 
 	hashFactory := app.Get("hash").(contracts.HasherFactory)
 	value := "goal hashing"

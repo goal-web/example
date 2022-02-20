@@ -3,20 +3,20 @@ package tests
 import (
 	"fmt"
 	"github.com/goal-web/contracts"
+	"github.com/goal-web/supports/utils"
 	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
 )
 
 func TestCacheFactory(t *testing.T) {
-	path, _ := os.Getwd()
-	app := initApp(path)
+	app := initApp()
 
 	cacheFactory := app.Get("cache").(contracts.CacheFactory)
 
-	fmt.Println(cacheFactory.Store())
-	err := cacheFactory.Store().Forever("a", "testing")
+	value := utils.RandStr(50)
+	err := cacheFactory.Store().Forever("a", value)
 	assert.Nil(t, err, err)
-	fmt.Println(cacheFactory.Store().Get("a"))
-	assert.True(t, cacheFactory.Store().Get("a") == "testing")
+	valueFromCache := cacheFactory.Store().Get("a")
+	fmt.Println(valueFromCache)
+	assert.True(t, valueFromCache == value)
 }

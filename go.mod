@@ -6,9 +6,9 @@ require (
 	github.com/asim/go-micro/plugins/registry/etcd/v4 v4.0.0-20220216084336-d47c2d984b92
 	github.com/goal-web/application v0.1.4
 	github.com/goal-web/auth v0.1.5
-	github.com/goal-web/bloomfilter v0.1.1
+	github.com/goal-web/bloomfilter v0.1.2
 	github.com/goal-web/cache v0.1.0
-	github.com/goal-web/config v0.1.1
+	github.com/goal-web/config v0.1.2
 	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
 	github.com/goal-web/contracts v0.1.49
@@ -19,7 +19,7 @@ require (
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/hashing v0.1.0
 	github.com/goal-web/http v0.1.7
-	github.com/goal-web/micro v0.0.0-20220219051831-8fb0fe5865eb
+	github.com/goal-web/micro v0.1.0
 	github.com/goal-web/microdemo v0.0.0-20220219171937-6f3fca7dfbcb
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
@@ -127,28 +127,4 @@ require (
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
-)
-
-replace (
-	github.com/goal-web/application => ../application
-	github.com/goal-web/auth => ../auth
-	github.com/goal-web/bloomfilter => ../bloomfilter
-	github.com/goal-web/cache => ../cache
-	github.com/goal-web/collection => ../collection
-	github.com/goal-web/config => ../config
-	github.com/goal-web/console => ../console
-	github.com/goal-web/container => ../container
-	github.com/goal-web/contracts => ../contracts
-	github.com/goal-web/database => ../database
-	github.com/goal-web/email => ../email
-	github.com/goal-web/encryption => ../encryption
-	github.com/goal-web/http => ../http
-	github.com/goal-web/micro => ../micro
-	github.com/goal-web/queue => ../queue
-	github.com/goal-web/redis => ../redis
-	github.com/goal-web/serialization => ../serialization
-	github.com/goal-web/session => ../session
-	github.com/goal-web/supports => ../supports
-	github.com/goal-web/validation => ../validation
-	github.com/goal-web/websocket => ../websocket
 )

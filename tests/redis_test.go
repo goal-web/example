@@ -4,7 +4,6 @@ import (
 	"github.com/goal-web/container"
 	"github.com/goal-web/contracts"
 	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
 	"time"
 )
@@ -12,8 +11,7 @@ import (
 func TestRedisFactory(t *testing.T) {
 	// 初始化容器
 
-	path, _ := os.Getwd()
-	app := initApp(path)
+	app := initApp()
 
 	app.Call(container.NewMagicalFunc(func(factory contracts.RedisFactory) {
 		defaultConnection := factory.Connection()

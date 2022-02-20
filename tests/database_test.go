@@ -11,7 +11,7 @@ import (
 
 func getQuery(name string) contracts.QueryBuilder {
 	// 测试用例环境下的简易 goal 应用启动
-	app := initApp("/Users/qbhy/project/go/goal-web/example/tests")
+	app := initApp()
 
 	//return  table.Query("users") 返回 table 实例，使用默认连接
 	//tx, _ := app.Get("db").(contracts.DBConnection).Begin()
@@ -65,7 +65,7 @@ func TestTableQuery(t *testing.T) {
 }
 
 func TestModel(t *testing.T) {
-	initApp("/Users/qbhy/project/go/goal-web/example/tests")
+	initApp()
 
 	user := models.UserQuery().Create(contracts.Fields{
 		"name": "qbhy",
@@ -87,23 +87,23 @@ func TestModel(t *testing.T) {
 	fmt.Println(models.UserQuery().Where("id", ">", 0).Delete())
 }
 
-func TestClickhouse(t *testing.T) {
-	initApp("/Users/qbhy/project/go/goal-web/example")
-
-	var UserQuery = func() *table.Table {
-		return table.WithConnection("users", "clickhouse")
-	}
-
-	user := UserQuery().Create(contracts.Fields{
-		"name": "qbhy",
-	})
-
-	fmt.Println("创建后返回", user)
-
-	fmt.Println("用table查询：",
-		UserQuery().Get().Map(func(user contracts.Fields) {
-			fmt.Println("用table查询", user)
-		}).ToJson()) // query 返回 Collection<contracts.Fields>
-
-	fmt.Println(UserQuery().Where("id", ">", 0).Delete())
-}
+//func TestClickhouse(t *testing.T) {
+//	initApp()
+//
+//	var UserQuery = func() *table.Table {
+//		return table.WithConnection("users", "clickhouse")
+//	}
+//
+//	user := UserQuery().Create(contracts.Fields{
+//		"name": "qbhy",
+//	})
+//
+//	fmt.Println("创建后返回", user)
+//
+//	fmt.Println("用table查询：",
+//		UserQuery().Get().Map(func(user contracts.Fields) {
+//			fmt.Println("用table查询", user)
+//		}).ToJson()) // query 返回 Collection<contracts.Fields>
+//
+//	fmt.Println(UserQuery().Where("id", ">", 0).Delete())
+//}
