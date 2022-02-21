@@ -6,9 +6,9 @@ require (
 	github.com/asim/go-micro/plugins/registry/etcd/v4 v4.0.0-20220216084336-d47c2d984b92
 	github.com/goal-web/application v0.1.4
 	github.com/goal-web/auth v0.1.5
-	github.com/goal-web/bloomfilter v0.1.1
+	github.com/goal-web/bloomfilter v0.1.2
 	github.com/goal-web/cache v0.1.0
-	github.com/goal-web/config v0.1.1
+	github.com/goal-web/config v0.1.2
 	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
 	github.com/goal-web/contracts v0.1.49
@@ -19,7 +19,7 @@ require (
 	github.com/goal-web/filesystem v0.0.0-20220120135714-dc3dd88b880a
 	github.com/goal-web/hashing v0.1.0
 	github.com/goal-web/http v0.1.7
-	github.com/goal-web/micro v0.0.0-20220219051831-8fb0fe5865eb
+	github.com/goal-web/micro v0.1.0
 	github.com/goal-web/microdemo v0.0.0-20220219171937-6f3fca7dfbcb
 	github.com/goal-web/querybuilder v0.1.13
 	github.com/goal-web/queue v0.1.1
@@ -131,6 +131,7 @@ require (
 
 replace (
 	github.com/goal-web/application => ../application
+	github.com/goal-web/filesystem => ../filesystem
 	github.com/goal-web/auth => ../auth
 	github.com/goal-web/bloomfilter => ../bloomfilter
 	github.com/goal-web/cache => ../cache
