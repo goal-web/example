@@ -2,6 +2,7 @@ package tests
 
 import (
 	"github.com/goal-web/filesystem"
+	"github.com/goal-web/filesystem/file"
 	"github.com/goal-web/supports/utils"
 	"github.com/stretchr/testify/assert"
 	"io/fs"
@@ -104,10 +105,10 @@ func TestLocalFileSystemDriver(t *testing.T) {
 	assert.True(t, len(disk.AllDirectories("logs")) == 2) // 包含子目录的目录数
 
 	// 测试文件可见性
-	assert.True(t, disk.GetVisibility(logPath) == filesystem.VISIBLE)
+	assert.True(t, disk.GetVisibility(logPath) == file.VISIBLE)
 	// 测试设置文件权限
 	assert.Nil(t, disk.SetVisibility(logPath, fs.FileMode(0400)))
-	assert.True(t, disk.GetVisibility(logPath) == filesystem.INVISIBLE)
+	assert.True(t, disk.GetVisibility(logPath) == file.INVISIBLE)
 
 	// 删除logs文件夹
 	assert.Nil(t, disk.DeleteDirectory("logs"))
