@@ -1,21 +1,37 @@
 package tests
 
 import (
+	"github.com/goal-web/contracts"
 	"github.com/goal-web/filesystem"
 	"github.com/goal-web/filesystem/file"
-	"github.com/goal-web/supports/utils"
 	"github.com/stretchr/testify/assert"
 	"io/fs"
 	"os"
 	"testing"
-	"time"
 )
 
 func TestLocalFileSystemDriver(t *testing.T) {
-	path, err := os.Getwd()
-	assert.Nil(t, err, err)
-	diskPath := path + "/" + utils.Md5(time.Now().Format("2006-01-02 15:04:05.999999999 -0700 MST"))
-	disk := filesystem.NewLocalFileSystem("testing", diskPath, fs.ModePerm)
+	var factory = filesystem.New(filesystem.Config{
+		Default: "qiniu",
+		Disks: map[string]contracts.Fields{
+			"local": {
+				"driver": "local",
+				"root":   "/Users/qbhy/project/go/goal-web/example/storage",
+				"perm":   os.ModePerm,
+			},
+			"qiniu": {
+				"driver":     "qiniu",
+				"ttl":        3600, // 私有 url 有效期，单位秒
+				"private":    true,
+				"domain":     "your domain", // example: https://image.example.com"
+				"bucket":     "your bucket",
+				"access_key": "your access key",
+				"secret_key": "your secret key",
+			},
+		},
+	})
+
+	var disk = factory.Disk("local")
 
 	checkFileContent := func(path, contents string) {
 		fileContents, err := disk.Get(path)

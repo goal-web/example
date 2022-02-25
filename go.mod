@@ -11,7 +11,7 @@ require (
 	github.com/goal-web/config v0.1.2
 	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
-	github.com/goal-web/contracts v0.1.49
+	github.com/goal-web/contracts v0.1.53
 	github.com/goal-web/database v0.1.7
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
@@ -27,7 +27,7 @@ require (
 	github.com/goal-web/redis v0.1.3
 	github.com/goal-web/serialization v0.1.8
 	github.com/goal-web/session v0.1.4
-	github.com/goal-web/supports v0.1.18
+	github.com/goal-web/supports v0.1.22
 	github.com/goal-web/validation v0.1.0
 	github.com/goal-web/websocket v0.1.2
 	github.com/golang-jwt/jwt v3.2.2+incompatible
@@ -98,6 +98,7 @@ require (
 	github.com/pierrec/lz4/v4 v4.1.14 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/qiniu/go-sdk/v7 v7.11.1 // indirect
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/segmentio/kafka-go v0.4.27 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
@@ -131,7 +132,6 @@ require (
 
 replace (
 	github.com/goal-web/application => ../application
-	github.com/goal-web/filesystem => ../filesystem
 	github.com/goal-web/auth => ../auth
 	github.com/goal-web/bloomfilter => ../bloomfilter
 	github.com/goal-web/cache => ../cache
@@ -143,6 +143,7 @@ replace (
 	github.com/goal-web/database => ../database
 	github.com/goal-web/email => ../email
 	github.com/goal-web/encryption => ../encryption
+	github.com/goal-web/filesystem => ../filesystem
 	github.com/goal-web/http => ../http
 	github.com/goal-web/micro => ../micro
 	github.com/goal-web/queue => ../queue

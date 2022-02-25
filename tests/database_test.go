@@ -5,6 +5,7 @@ import (
 	"github.com/goal-web/contracts"
 	"github.com/goal-web/database/table"
 	"github.com/goal-web/example/app/models"
+	"github.com/goal-web/supports/utils"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -88,13 +89,31 @@ func TestModel(t *testing.T) {
 }
 
 func TestClickhouse(t *testing.T) {
-	initApp("/Users/qbhy/project/go/goal-web/example")
+
+	var (
+		id         = uint64(1)
+		app        = initApp("/Users/qbhy/project/go/goal-web/example")
+		tableName  = "users" + utils.RandStr(5)
+		factory    = app.Get("db.factory").(contracts.DBFactory)
+		clickhouse = factory.Connection("clickhouse")
+	)
+
+	var _, err = clickhouse.Exec(fmt.Sprintf(`create table %s
+(
+    id   Nullable(Int32),
+    name Nullable(String)
+)
+    engine = Memory;`, tableName))
+
+	assert.Nil(t, err, err)
 
 	var UserQuery = func() *table.Table {
-		return table.WithConnection("users", "clickhouse")
+		return table.WithConnection(tableName, "clickhouse")
 	}
 
-	user := UserQuery().Create(contracts.Fields{
+	id++
+	var user = UserQuery().Create(contracts.Fields{
+		"id":   id,
 		"name": "qbhy",
 	})
 
@@ -105,5 +124,5 @@ func TestClickhouse(t *testing.T) {
 			fmt.Println("用table查询", user)
 		}).ToJson()) // query 返回 Collection<contracts.Fields>
 
-	fmt.Println(UserQuery().Where("id", ">", 0).Delete())
+	clickhouse.Exec(fmt.Sprintf("drop table if exists %s", tableName))
 }
