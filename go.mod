@@ -3,22 +3,22 @@ module github.com/goal-web/example
 go 1.17
 
 require (
-	github.com/asim/go-micro/plugins/registry/etcd/v4 v4.0.0-20220216084336-d47c2d984b92
+	github.com/asim/go-micro/plugins/registry/etcd/v4 v4.0.0-20220223051450-69b4b5d1c603
 	github.com/goal-web/application v0.1.4
 	github.com/goal-web/auth v0.1.5
 	github.com/goal-web/bloomfilter v0.1.2
-	github.com/goal-web/cache v0.1.0
-	github.com/goal-web/config v0.1.2
+	github.com/goal-web/cache v0.1.2
+	github.com/goal-web/config v0.1.3
 	github.com/goal-web/console v0.1.1
 	github.com/goal-web/container v0.1.5
 	github.com/goal-web/contracts v0.1.53
-	github.com/goal-web/database v0.1.7
+	github.com/goal-web/database v0.1.8
 	github.com/goal-web/email v0.1.1
 	github.com/goal-web/encryption v0.1.1
 	github.com/goal-web/events v0.1.5
-	github.com/goal-web/filesystem v0.1.1
+	github.com/goal-web/filesystem v0.1.2
 	github.com/goal-web/hashing v0.1.0
-	github.com/goal-web/http v0.1.7
+	github.com/goal-web/http v0.1.17
 	github.com/goal-web/micro v0.1.0
 	github.com/goal-web/microdemo v0.0.0-20220219171937-6f3fca7dfbcb
 	github.com/goal-web/querybuilder v0.1.13
@@ -27,7 +27,7 @@ require (
 	github.com/goal-web/redis v0.1.3
 	github.com/goal-web/serialization v0.1.8
 	github.com/goal-web/session v0.1.4
-	github.com/goal-web/supports v0.1.22
+	github.com/goal-web/supports v0.1.26
 	github.com/goal-web/validation v0.1.0
 	github.com/goal-web/websocket v0.1.2
 	github.com/golang-jwt/jwt v3.2.2+incompatible
@@ -35,7 +35,9 @@ require (
 	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
 	github.com/gorilla/websocket v1.5.0
 	github.com/labstack/echo/v4 v4.6.3
+	github.com/qbhy/goal-wechat v0.1.0
 	github.com/qbhy/parallel v1.4.0
+	github.com/silenceper/wechat/v2 v2.1.2
 	github.com/stretchr/testify v1.7.0
 	github.com/xwb1989/sqlparser v0.0.0-20180606152119-120387863bf2
 	go-micro.dev/v4 v4.6.0
@@ -50,6 +52,7 @@ require (
 	github.com/apex/log v1.9.0 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/bits-and-blooms/bitset v1.2.1 // indirect
+	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
@@ -57,6 +60,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/emirpasic/gods v1.12.0 // indirect
+	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/go-git/gcfg v1.5.0 // indirect
 	github.com/go-git/go-billy/v5 v5.3.1 // indirect
@@ -71,8 +75,8 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/gomodule/redigo v1.8.5 // indirect
 	github.com/google/uuid v1.3.0 // indirect
-	github.com/gopherjs/gopherjs v0.0.0-20220104163920-15ed2e8cf2bd // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/jmoiron/sqlx v1.3.4 // indirect
@@ -104,6 +108,8 @@ require (
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/spf13/cast v1.3.1 // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
