@@ -68,15 +68,15 @@ func main() {
 		&email.ServiceProvider{},
 		&http.ServiceProvider{RouteCollectors: []interface{}{
 			// 路由收集器
-			routes.ApiRoutes,
-			routes.WebSocketRoutes,
-			routes.SseRoutes,
+			routes.Api,
+			routes.WebSocket,
+			routes.Sse,
 		}},
 		sse.ServiceProvider{},
 		websocket.ServiceProvider{},
 		providers.App{},
 		providers.Gate(),
-		providers.Micro(),
+		//providers.Micro(),
 		&signal.ServiceProvider{},
 	)
 

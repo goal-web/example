@@ -9,7 +9,7 @@ import (
 	"github.com/goal-web/session"
 )
 
-func ApiRoutes(router contracts.Router) {
+func Api(router contracts.Router) {
 
 	router.Get("/queue", controllers.DemoJob)
 

@@ -33,10 +33,13 @@ func init() {
 					},
 				},
 			},
+
+			// 死信存储位置
 			Failed: queue.FailedJobs{
 				Database: env.StringOption("db.connection", "mysql"),
 				Table:    "failed_jobs",
 			},
+
 			Workers: map[string]queue.Workers{ // 相当于 laravel 的 horizon 配置
 				"local": { // 本地环境
 					"default": { // 工作组

@@ -6,7 +6,7 @@ import (
 	"github.com/goal-web/websocket"
 )
 
-func WebSocketRoutes(router contracts.Router) {
+func WebSocket(router contracts.Router) {
 	router.Static("/", "/")
 
 	router.Get("/ws", websocket.Default(func(frame contracts.WebSocketFrame) {

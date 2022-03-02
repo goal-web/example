@@ -5,7 +5,7 @@ import (
 	"github.com/goal-web/http/sse"
 )
 
-func SseRoutes(router contracts.Router) {
+func Sse(router contracts.Router) {
 	router.Get("/sse", sse.Default())
 
 	router.Get("/send-sse", func(sse contracts.Sse, request contracts.HttpRequest) error {
