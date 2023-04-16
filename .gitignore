@@ -1,8 +1,8 @@
+.idea
 database/*.sqlite
-public/*
-goal.pid
+*.pid
 storage/*
 
 /real.env
 
-/bin_*
+/bin*

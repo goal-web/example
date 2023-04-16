@@ -2,8 +2,6 @@ package tests
 
 import (
 	"github.com/goal-web/application"
-	"github.com/goal-web/application/exceptions"
-	"github.com/goal-web/application/signal"
 	"github.com/goal-web/auth"
 	"github.com/goal-web/bloomfilter"
 	"github.com/goal-web/cache"
@@ -14,23 +12,18 @@ import (
 	"github.com/goal-web/email"
 	"github.com/goal-web/encryption"
 	"github.com/goal-web/events"
-	console2 "github.com/goal-web/example/app/console"
-	config2 "github.com/goal-web/example/config"
 	"github.com/goal-web/filesystem"
+	console2 "github.com/goal-web/goal/app/console"
+	config2 "github.com/goal-web/goal/config"
 	"github.com/goal-web/hashing"
 	"github.com/goal-web/redis"
 	"github.com/goal-web/session"
+	"github.com/goal-web/supports/exceptions"
 	"github.com/goal-web/supports/logs"
 )
 
 func initApp(path ...string) contracts.Application {
-	runPath := "/Users/qbhy/project/go/goal-web/example"
-	if len(path) > 0 {
-		runPath = path[0]
-	}
-	env := "testing"
 	app := application.Singleton()
-	app.Instance("path", runPath)
 
 	// 设置异常处理器
 	app.Singleton("exceptions.handler", func() contracts.ExceptionHandler {
@@ -38,30 +31,20 @@ func initApp(path ...string) contracts.Application {
 	})
 
 	app.RegisterServices(
-		&config.ServiceProvider{
-			Env:             env,
-			Paths:           []string{runPath},
-			Sep:             "=",
-			ConfigProviders: config2.Configs(),
-		},
-		&console.ServiceProvider{
-			ConsoleProvider: func(application contracts.Application) contracts.Console {
-				return console2.NewKernel(application)
-			},
-		},
-		hashing.ServiceProvider{},
-		encryption.ServiceProvider{},
-		filesystem.ServiceProvider{},
-		events.ServiceProvider{},
-		redis.ServiceProvider{},
-		&bloomfilter.ServiceProvider{},
-		cache.ServiceProvider{},
-		&signal.ServiceProvider{},
-		&session.ServiceProvider{},
-		auth.ServiceProvider{},
-		&email.ServiceProvider{},
-		&database.ServiceProvider{},
-		//&http.ServiceProvider{RouteCollectors: []interface{}{
+		config.NewService(config.NewToml(config.File("config.toml")), config2.GetConfigProviders()),
+		console.NewService(console2.NewKernel),
+		hashing.NewService(),
+		encryption.NewService(),
+		filesystem.NewService(),
+		events.NewService(),
+		redis.NewService(),
+		bloomfilter.NewService(),
+		cache.NewService(),
+		session.NewService(),
+		auth.NewService(),
+		email.NewService(),
+		database.NewService(),
+		//&http.serviceProvider{RouteCollectors: []any{
 		//	// 路由收集器
 		//	routes.V1Routes,
 		//}},
